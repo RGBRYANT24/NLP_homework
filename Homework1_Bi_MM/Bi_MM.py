@@ -1,5 +1,6 @@
 import time
 
+
 def get_dic(dic_path):
     with open(dic_path, 'r', encoding='utf-8', ) as f:
         try:
@@ -8,6 +9,7 @@ def get_dic(dic_path):
             f.close()
     chars = list(set(file_content))
     return chars
+
 
 class WordSeg(object):
     def __init__(self, dic):
@@ -65,8 +67,8 @@ class WordSeg(object):
             else:
                 return fmm_list if fmm_single < bmm_single else bmm_list
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     # dic = ['研究', '研究生', '生命', '命', '的', '起源']
     # text = '研究生命的起源'
     text = "我国发现新物种“白盖鸡油菌” 专家建议不要采食\
@@ -113,4 +115,3 @@ if __name__ == '__main__':
     result_file.write('\\'.join(bdmm_result) + '\n')
     result_file.write('双向最大匹配的时间: ' + str(bdmm_time) + '\n')
     result_file.close()
-
